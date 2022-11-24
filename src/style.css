@@ -55,3 +55,7 @@ main {
   border-radius: 5px;
   text-indent: 5px;
 }
+
+.meme--img{
+  max-width: 100%;
+}
