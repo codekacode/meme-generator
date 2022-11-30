@@ -8,10 +8,10 @@ function Meme() {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
-  const [allMemeData, setAllMeme] = useState(memesData)
+  const [allMemeImages, setAllMemeImages] = useState(memesData)
 
   function getMemeImage() {
-    const memesArray = allMemeData.data.memes;
+    const memesArray = allMemeImages.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length)
     const url = memesArray[randomNumber].url;
     setMeme(prevValue => ({
@@ -25,10 +25,14 @@ function Meme() {
       <div className="form">
         <input className="form--input" type="text" placeholder="Text" />
         <input className="form--input" type="text" placeholder="Text" />
-        <button onClick={getMemeImage} type="submit" className="form--button">Get a new meme image 🖼</button>
+        <button onClick={getMemeImage} type="submit" className="form--button">
+          Get a new meme image 🖼
+        </button>
       </div>
       <div className="meme">
-        <img src={meme.randomImage} type="submit" className="meme--img"  />
+        <img src={meme.randomImage} type="submit" className="meme--img" />
+        <h2 className="meme--text top">One does not simply</h2>
+        <h2 className="meme--text bottom">Walk into Mordo</h2>
       </div>
     </main>
   );
